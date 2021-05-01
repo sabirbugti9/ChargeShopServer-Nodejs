@@ -41,5 +41,5 @@ mongoose.connect(connectionString, {
 });
 var server = app.listen(port || 3000, () => {
     var ports = server.address.port;
-    console.log("Express is working on port" + ports);
+    console.log("Express is working on port " + port);
 });
