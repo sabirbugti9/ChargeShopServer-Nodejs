@@ -8,6 +8,7 @@ exports.addCategoryController =async (req, res, next) => {
     const name = req.body.name;
     const icon = req.body.icon;
     const color = req.body.color;
+    
 
 
     let category = Category({
