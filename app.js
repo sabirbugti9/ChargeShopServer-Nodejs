@@ -14,6 +14,7 @@ const errorHandler = require("./helper/error_handler");
 require('dotenv/config');
 const api = process.env.API_URL;
 const connectionString = process.env.CONNECTION_STRING;
+const port = process.env.PORT;
 
 app.use(express.json())
 app.use(morgan('tiny'));
@@ -38,7 +39,7 @@ mongoose.connect(connectionString, {
     console.log("error ");
     console.log(err);
 });
-app.listen(3000, () => {
-    console.log("Server is running");
-    console.log(connectionString);
+var server = app.listen(port || 3000, () => {
+    var ports = server.address.port;
+    console.log("Express is working on port" + ports);
 });
